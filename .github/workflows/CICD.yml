@@ -28,5 +28,5 @@ jobs:
        runs-on: ubuntu-latest
        steps: 
          - name: finale deployment of code 
-           runs: echo "code deployed succesfully "
+           run: echo "code deployed succesfully "
     
