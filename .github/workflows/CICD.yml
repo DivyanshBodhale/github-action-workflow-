@@ -1,0 +1,32 @@
+name: manual-workflow 
+
+on:
+  workflow_dispatch: 
+
+
+  jobs: 
+  
+    code:
+      runs-on: ubuntu-latest
+      steps:
+       - name: do code on github, pull from github 
+         run: echo "code is pulled sussecfully"
+
+    
+    build: 
+      runs-on: ubuntu-latest
+      steps:
+        - name: build docker image from the code
+          run: echo "code build "
+    test: 
+      runs-on: ubuntu-latest
+      steps: 
+        - name: test the dependencies for the code
+          run: echo "dependencyes tchecked"
+          
+    deploy:
+       runs-on: ubuntu-latest
+       steps: 
+         - name: finale deployment of code 
+           runs: echo "code deployed succesfully "
+    
