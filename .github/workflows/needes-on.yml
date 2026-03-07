@@ -1,0 +1,35 @@
+name: needs / depends on workflow 
+
+on:
+  workflow_dispatch: 
+
+
+jobs: 
+  
+    code:
+      runs-on: ubuntu-latest
+      steps:
+       - name: do code on github, pull from github 
+         run: echo "code is pulled sussecfully"
+
+    
+    build: 
+      needs: [code]
+      runs-on: ubuntu-latest
+      steps:
+        - name: build docker image from the code
+          run: echo "code build "
+    test: 
+      needs: [build]
+      runs-on: ubuntu-latest
+      steps: 
+        - name: test the dependencies for the code
+          run: echo "dependencyes tchecked"
+          
+    deploy:
+       needs: [test]
+       runs-on: ubuntu-latest
+       steps: 
+         - name: finale deployment of code 
+           run: echo "code deployed succesfully "
+    
