@@ -13,7 +13,7 @@ jobs :
   greet: 
 
 # specify runner where the job will runs, every job need a runner without runner/ server job connote be run 
-        runs-on: ubuntu-leatest
+        runs-on: ubuntu-latest
 
 #steps in job name greet
         steps:
