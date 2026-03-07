@@ -1,0 +1,26 @@
+# name of the workflow 
+name: first workflow 
+
+# run the event triger / runs on the triger 
+on: 
+  push:
+     branches: [main]
+
+# jobs that runs on runner, every job needs a runner to run  
+jobs : 
+
+# job name 
+  greet: 
+
+# specify runner where the job will runs, every job need a runner without runner/ server job connote be run 
+        runs-on: ubuntu-leatest
+
+#steps in job name greet
+        steps:
+# we can also give names to the steps in job 
+           - name: sy hellow to users 
+             run: echo "hello users"
+ # one more step in job greet 
+           - name: say hello to username 
+             run: echo "hello $USER" 
+     
