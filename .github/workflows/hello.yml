@@ -1,5 +1,5 @@
 # name of the workflow 
-name: first workflow 
+name: hello
 
 # run the event triger / runs on the triger 
 on: 
