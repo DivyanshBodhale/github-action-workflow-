@@ -1,0 +1,26 @@
+name: metrix-stratergy 
+
+on: 
+  workflow_dispatch: 
+
+jobs: 
+  testing:
+     runs-on: ubuntu-latest 
+  
+     strategy: 
+        matrix: 
+           python-version: [ 3.14, 3.13, 3.12, 3.11, 3.10] 
+
+     steps: 
+        - name: checkout code 
+          uses: actions/checkout@v4
+
+        - name: setups  pythen 
+          uses: actions/setup-pyhton
+          with: 
+            pyhton-versions: ${{ matrix.python-version }}
+
+        - name:  run the pyhone test 
+          run: pyhton -v
+
+
