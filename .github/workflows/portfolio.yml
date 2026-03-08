@@ -1,5 +1,5 @@
 # name of workflow 
-name: porfolio
+name: portfolio
  
 # triggers when
 on: 
