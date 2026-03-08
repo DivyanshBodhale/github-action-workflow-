@@ -5,7 +5,7 @@ on:
 permissions:
   pages: write
   id-token: write
-  contents: read
+  contents: read-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,6 +19,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: upload artifacts
         uses: actions/upload-pages-artifact@v4
+        with:
+          path: " . "
       - name: deploy to pages
         id: deployment
         uses: actions/deploy-pages@v4
