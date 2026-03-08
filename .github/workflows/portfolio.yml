@@ -1,15 +1,9 @@
-<<<<<<< HEAD
-name: porfolio
-=======
-# name of workflow 
 name: portfolio
->>>>>>> 1eee45bd55e7cb8bce6be55cad775a4114d54248
- 
-# triggers when
+ # triggers when
 on: 
-    workflow_dispatch: 
+   workflow_dispatch: 
     
-
+ 
   permissions: 
         pages: write 
         id-token: write 
