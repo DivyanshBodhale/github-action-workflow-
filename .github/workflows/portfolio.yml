@@ -1,0 +1,40 @@
+# name of workflow 
+name: porfolio
+ 
+# triggers when
+on: 
+    workflow_dispatch: 
+    
+
+ permissions: 
+        pages: write 
+        id-token: write 
+        contents: read
+    
+jobs: 
+
+    deploy: 
+            runs-on: ubuntu-latest
+            environment: 
+                  name: github-pages
+                  url: ${{ steps.deployment.ouputs.page_url }}
+
+            steps:
+
+                # clone code to runners . code checkout 
+                - name: code checkout 
+                  uses: actions/checkout@v4
+
+                # configure pages 
+                - name: configur the pages 
+                  uses: actions/configure-pages@v4
+
+                # push archifactes 
+                - name: upload artifacts 
+                  uses: actions/upload--pages-artifact@4
+
+                # deploy 
+                - name: deploy to pages
+                  id: deployment 
+                  uses: actions/deploy-pages@v4
+
