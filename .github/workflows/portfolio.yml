@@ -20,7 +20,7 @@ jobs:
       - name: upload artifacts
         uses: actions/upload-pages-artifact@v4
         with:
-          path: " . "
+          path: . 
       - name: deploy to pages
         id: deployment
         uses: actions/deploy-pages@v4
