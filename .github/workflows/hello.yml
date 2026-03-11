@@ -3,8 +3,9 @@ name: hello
 
 # run the event triger / runs on the triger 
 on: 
-  push:
-    branches: [main]
+ # push:
+  #  branches: [main]
+  workflow_dispatch: 
 
     paths:
         - "**.html"
