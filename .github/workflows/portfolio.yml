@@ -9,9 +9,12 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    # Set the environment to github-pages, which automatically creates a deployment and a deployment status nad give the url of website 
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: code checkout
         uses: actions/checkout@v4
