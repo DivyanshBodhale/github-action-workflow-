@@ -16,7 +16,7 @@ jobs:
    deploye:  
           runs-on: ubuntu-latest 
           environment:
-            name: deployment
+            name: github-pages
     
           steps: 
            - name: codechekcout
