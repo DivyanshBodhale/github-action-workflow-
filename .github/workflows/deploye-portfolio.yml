@@ -1,0 +1,38 @@
+name: deploye-portfolio-V1
+
+on: 
+    push: 
+        branches:
+             - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+
+jobs: 
+
+   deploye:  
+          runs-on: ubuntu-latest 
+    
+          steps: 
+           - name: code chekcout
+             uses: actions/codecheout@v4
+
+           - name: Configure GitHub Pages
+             uses: actions/configure-pages@v5
+      
+           - name: upload artifacts
+             uses: action/upload-pages-artifact@v4
+
+           - name: deploye to github actions pages 
+             id: deploymnt 
+             uses: actions/deploys-pages@4 
+
+           - name: takes url for the pages deployment 
+             run: echo " site url is ${{ steps.deploymen.outputs.pages_url }} "
+
+        
+        
+

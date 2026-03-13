@@ -1,3 +1,22 @@
 name: second pipline 
 
-on: branches
+on:
+ push:
+  branches: [main ,dev]
+
+jobs:
+
+  
+  deployment:
+    runs-on: ubuntu-latest
+     
+    permissins:
+      content: read 
+      id-tocken
+
+    steps:
+
+      - name: codecheckout
+        uses: actions/codecheckout@v4
+
+      - name:  
