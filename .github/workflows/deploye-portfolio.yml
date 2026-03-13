@@ -17,23 +17,25 @@ jobs:
           runs-on: ubuntu-latest 
     
           steps: 
-           - name: code chekcout
-             uses: actions/codecheout@v4
+           - name: codechekcout
+             uses: actions/checkout@v4
 
            - name: Configure GitHub Pages
              uses: actions/configure-pages@v5
       
            - name: upload artifacts
-             uses: action/upload-pages-artifact@v4
+             uses: actions/upload-pages-artifact@v4
              with: 
               path: . 
 
            - name: deploye to github actions pages 
              id: deploymnt 
-             uses: actions/deploys-pages@4 
+             uses: actions/deploy-pages@v4
 
            - name: takes url for the pages deployment 
              run: echo " site url is ${{ steps.deploymen.outputs.pages_url }} "
+
+
 
         
         
